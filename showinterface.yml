@@ -1,9 +1,10 @@
 ---
-- name: demo
-  hosts: Switch
+- name: show interface status
+  hosts: all
+  gather_facts: no
 
   tasks:
-    - name: run show version on remote devices
+    - name: run show interface status on remote devices
       os6_command:
         commands: show int status
       register: demo
