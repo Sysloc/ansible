@@ -2,8 +2,8 @@
 - name: demo
   hosts: inventories_switch
 
-  - name: run show version on remote devices
-    os10_command:
+- name: run show version on remote devices
+    os6_command:
       commands: show version
       register: demo
     - debug: var=demo.stdout_lines
