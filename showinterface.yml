@@ -4,7 +4,6 @@
   gather_facts: no
 
   tasks:
-    - name: run show interface status on remote devices
       os6_command:
         commands: show int status
         wait_for: result[0] contains Dells
