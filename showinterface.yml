@@ -2,9 +2,8 @@
 - name: demo
   hosts: inventories_switch
 
-  tasks:
-    - name: run show interface on remote devices
-      os10_command:
-        commands: show int status
+  - name: run show version on remote devices
+    os10_command:
+      commands: show version
       register: demo
     - debug: var=demo.stdout_lines
