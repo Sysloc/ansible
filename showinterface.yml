@@ -1,11 +1,10 @@
 ---
 - name: show interface status
-  hosts: all
+  hosts: inventories_switch
   gather_facts: no
 
   tasks:
     - name: run show interface status on remote devices
       os6_command:
         commands: show int status
-      register: demo
-    - debug: var=demo.stdout_lines
+        wait_for: result[0] contains Dells
